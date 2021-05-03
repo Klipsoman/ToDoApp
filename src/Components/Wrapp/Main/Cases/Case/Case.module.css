@@ -1,0 +1,97 @@
+.caseBlock{
+    padding: 10px;
+    border: 1px solid white;
+    font-family: 'Literata', serif;
+    font-weight: 400;
+}
+
+.case{
+    margin-top: 10px;
+}
+
+.countCase{
+    color: rgb(167, 42, 42);
+    font-weight: 500;
+}
+
+.trash{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li:before {
+    content: "\f00c"; /* добавляем иконку дом */
+    font-family: FontAwesome;
+    color: #7a3939;
+    margin-right: 10px; 
+    }
+
+.trashBlock{
+    cursor: pointer;
+    position: relative;
+}
+.choiceBlock{
+    display: flex;
+    padding-top: 10px;
+}
+/* #7a3939 */
+.deleteCase{
+    visibility: hidden;
+    background-color: #f1f1f1;
+    color: #df780f;
+    position: absolute;
+    opacity: 0;
+    font-size: 18px;
+    padding: 3px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid #df780f;
+}
+
+.trashBlock:hover .deleteCase{
+    visibility: visible;
+    top: 0;
+    left: 100%;
+    z-index: 1000;
+    transition:  .3s linear;
+    transition-delay: .8s;
+    opacity: 1;
+}
+
+.choiceBlock div i{
+    color:#3f8d1f ;
+}
+
+.doneBlock{
+    cursor: pointer;
+    position: relative;  
+}
+
+.doneCase{
+    background-color: #f1f1f1;
+    width: 0px;
+    color: #df780f;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    font-size: 15px;
+    padding: 3px;
+    border: 1px solid #df780f;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.doneBlock:hover .doneCase{
+    opacity: 1;
+    top: 0;
+    visibility: visible;
+    width: auto;
+    left: 100%;
+    transition:  .3s linear ;
+    transition-delay: .8s;
+}
