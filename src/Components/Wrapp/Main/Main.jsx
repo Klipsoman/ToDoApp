@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { Col, Container, Row } from "reactstrap";
+// import { Col, Container, Row } from "reactstrap";
 import css from "./Main.module.css";
 import { WriteText } from "./WriteText/WriteText";
 import "font-awesome/css/font-awesome.min.css";
 import { Cases } from "./Cases/Cases";
 import PropTypes from "prop-types";
+import { BootWrapp } from "../../BootWrapp/BootWrapp";
 
-export const Main = ({setCountDoneCases}) => {
+export const Main = ({ setCountDoneCases }) => {
   const [value, setValue] = useState("");
   const [list, setList] = useState([]);
 
@@ -50,26 +51,22 @@ export const Main = ({setCountDoneCases}) => {
 
   return (
     <div className={css.main}>
-      <Container>
-        <Row>
-          <Col>
-            <div className={css.contentWrapper}>
-              <WriteText
-                handleChange={handleChange}
-                addToList={addToList}
-                isEnterPress={isEnterPress}
-                value={value}
-              />
-              <Cases 
-                list={list}
-                setList={setList}
-                deleteCase={deleteCase}
-                setCountDoneCases={setCountDoneCases}
-             />
-            </div>
-          </Col>
-        </Row>
-      </Container>
+      <BootWrapp>
+        <div className={css.contentWrapper}>
+          <WriteText
+            handleChange={handleChange}
+            addToList={addToList}
+            isEnterPress={isEnterPress}
+            value={value}
+          />
+          <Cases
+            list={list}
+            setList={setList}
+            deleteCase={deleteCase}
+            setCountDoneCases={setCountDoneCases}
+          />
+        </div>
+      </BootWrapp>
     </div>
   );
 };
